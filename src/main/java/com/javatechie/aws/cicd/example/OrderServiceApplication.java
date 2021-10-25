@@ -13,17 +13,21 @@ import java.util.stream.Collectors;
 
 @SpringBootApplication
 @RestController
-@RequestMapping("/orders")
+//@RequestMapping("/orders")
+@RequestMapping("/hello");
 public class OrderServiceApplication {
 
     @Autowired
     private OrderDao orderDao;
 
     @GetMapping
-    public List<Order> fetchOrders() {
-        return orderDao.getOrders().stream().
-                sorted(Comparator.comparing(Order::getPrice)).collect(Collectors.toList());
+    public String sayHello(){
+        return "Welcome to ACS Solutions";
     }
+//     public List<Order> fetchOrders() {
+//         return orderDao.getOrders().stream().
+//                 sorted(Comparator.comparing(Order::getPrice)).collect(Collectors.toList());
+//     }
 
     public static void main(String[] args) {
         SpringApplication.run(OrderServiceApplication.class, args);
