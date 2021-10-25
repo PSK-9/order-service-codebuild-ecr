@@ -31,6 +31,7 @@ phases:
       - cat helloworld.json
 artifacts:
   files:
-   - imagedefinitions.json
+#   - imagedefinitions.json
+   - helloworld.json
    - target/order-service.jar
 
